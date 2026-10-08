@@ -14,13 +14,13 @@ Select the forecasting horizon below to see predicted values and an interactive 
 # Load the dumped model
 @st.cache_resource
 def load_model():
-    return joblib.load('tractor_sales_arima_model.pkl')
+    return joblib.load('tractor_sales_arima_model.joblib')
 
 try:
     model = load_model()
     st.success("Model successfully loaded!")
 except Exception as e:
-    st.error(f"Failed to load the model file. Please ensure 'tractor_sales_arima_model.pkl' is in the same directory. Error: {e}")
+    st.error(f"Failed to load the model file. Please ensure 'tractor_sales_arima_model.joblib' is in the same directory. Error: {e}")
     st.stop()
 
 # User Inputs
